@@ -1,3 +1,10 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+import { ServicesData } from '../data/ServicesData.data';
+import ServiceCard from '../components/ServiceCard.vue';
+
+const servicesData = ref(ServicesData);
+</script>
 <template>
   <section class="header">
     <article class="header__info">
@@ -17,8 +24,15 @@
       </picture>
     </article>
   </section>
+
+  <section class="services">
+    <article v-for="item in servicesData" class="services__cont">
+      <ServiceCard :serviceItem="item" />
+    </article>
+  </section>
 </template>
 
+<!-- header section -->
 <style scoped>
 .header {
   display: flex;
@@ -69,6 +83,7 @@
   display: grid;
   place-content: center;
 }
+
 /* queries */
 @media screen and (max-width: 1000px) {
   .header__info {
@@ -86,6 +101,48 @@
   .header__animation,
   .header__info {
     width: 100%;
+  }
+}
+@media screen and (max-width: 370px) {
+  .header__info--btn {
+    width: 100%;
+  }
+}
+</style>
+
+<!-- section Servicios de transporte y distribución  -->
+<style scoped>
+.services {
+  width: 90%;
+  margin: 12rem auto;
+  display: flex;
+  place-content: center;
+  justify-content: space-around;
+
+  transition: 0.7s ease-in-out;
+}
+.services__cont {
+  display: grid;
+  place-content: center;
+}
+
+@media screen and (max-width: 975px) {
+  .services {
+    display: grid;
+    grid-auto-rows: 20rem;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr));
+  }
+}
+@media screen and (max-width: 791px) {
+  .services {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr));
+  }
+}
+@media screen and (max-width: 570px) {
+  .services {
+    width: 96%;
+    margin: 6rem auto;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 50%), 1fr));
   }
 }
 </style>
