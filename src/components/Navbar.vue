@@ -19,14 +19,15 @@
 
 <style scoped>
 .nav {
-  background-color: rgba(255, 255, 255, 0.062);
+  background-color: rgba(255, 255, 255, 0.445);
+  color: #000;
   display: flex;
   justify-content: space-around;
   align-items: center;
   position: fixed;
   width: 100%;
   padding: 0.5rem 0;
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(20px);
   z-index: 1;
 }
 
