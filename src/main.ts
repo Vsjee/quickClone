@@ -3,6 +3,7 @@ import { createApp } from 'vue';
 import App from './App.vue';
 import './style.css';
 import { publicRoutes } from './models';
+import VueSplide from '@splidejs/vue-splide';
 
 const routes = [
   { path: '/', component: () => import('./pages/Home.vue').then((p) => p.default) },
@@ -48,5 +49,6 @@ const router = createRouter({
 const app = createApp(App);
 
 app.use(router);
+app.use(VueSplide);
 
 app.mount('#app');
