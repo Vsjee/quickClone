@@ -32,7 +32,16 @@ const servicesData = ref(ServicesData);
     </article>
   </section>
 
-  <section>
+  <section class="slider_s">
+    <h1 class="slider_s--title">
+      Plataforma para la optimización, seguimiento y control de operaciones logísticas
+    </h1>
+    <p class="slider_s--text">
+      <strong
+        >Con nuestra tecnología las empresas logran reducir entre un 20% y 40% sus costos
+        logísticos</strong
+      >
+    </p>
     <Slider />
   </section>
 </template>
@@ -149,5 +158,20 @@ const servicesData = ref(ServicesData);
     margin: 6rem auto;
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 50%), 1fr));
   }
+}
+</style>
+
+<style scoped>
+.slider_s {
+  text-align: center;
+}
+.slider_s--title {
+  font-size: 1.5rem;
+  padding-bottom: 2rem;
+}
+.slider_s--text,
+.slider_s--title {
+  width: 90%;
+  margin: 0 auto;
 }
 </style>
