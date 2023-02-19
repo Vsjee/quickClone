@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 import { ServicesData } from '../data/ServicesData.data';
 import ServiceCard from '../components/ServiceCard.vue';
+import Slider from '../components/Slider.vue';
 
 const servicesData = ref(ServicesData);
 </script>
@@ -29,6 +30,10 @@ const servicesData = ref(ServicesData);
     <article v-for="item in servicesData" class="services__cont">
       <ServiceCard :serviceItem="item" />
     </article>
+  </section>
+
+  <section>
+    <Slider />
   </section>
 </template>
 
