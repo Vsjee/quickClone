@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { ServicesData } from '../data/ServicesData.data';
+import { ServicesData, someClientsData } from '../data';
 import ServiceCard from '../components/ServiceCard.vue';
+import ClienteCard from '../components/ClienteCard.vue';
 import Slider from '../components/Slider.vue';
 
 const servicesData = ref(ServicesData);
+const clientsData = ref(someClientsData);
 </script>
 <template>
   <section class="header">
@@ -43,6 +45,15 @@ const servicesData = ref(ServicesData);
       >
     </p>
     <Slider />
+  </section>
+
+  <section class="clients">
+    <article>
+      <p>Ellos ya <span>CONFÍAN</span> <strong>en nosotros</strong></p>
+    </article>
+    <article v-for="item in clientsData">
+      <ClienteCard :clientsData="item" />
+    </article>
   </section>
 </template>
 
@@ -161,6 +172,7 @@ const servicesData = ref(ServicesData);
 }
 </style>
 
+<!-- slider section -->
 <style scoped>
 .slider_s {
   text-align: center;
